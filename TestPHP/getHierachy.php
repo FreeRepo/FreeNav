@@ -18,12 +18,12 @@
 		$mysql_password='eagle';
 		$mysql_database='FreexueNav';
 
-		
+		$level = $_GET["level"];
 
 		$db = new foo_mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 		//echo 'Success... ' . $db->host_info . "\n";
 
-		$result = $db->query("SELECT level2 FROM Data GROUP BY level2");
+		$result = $db->query("SELECT level2 FROM Data GROUP BY level".$level);
 		//echo "SELECT * FROM Data WHERE level2 = '".$var."'";
 
 		//printf("Select returned %d rows.\n", $result->num_rows);
@@ -31,7 +31,6 @@
 		$key = 0;
 		
 		while($row=mysqli_fetch_array($result)){
-			echo $row[0]."<br>";	
 			if ($row[0]!="")
 			{
 				$output[$key]= urlencode($row[0]);

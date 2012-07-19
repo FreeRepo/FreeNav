@@ -42,13 +42,14 @@
 			$data->level1 = urlencode($level1);
 			$data->level2 = urlencode($level2);
 			$data->level3 = urlencode($level3);
-			$data->name = urlencode($name);
+			$data->name = htmlspecialchars_decode(urlencode($name));
 			$data->URL = urlencode($URL);
 			$data->content = urlencode($introduction);
 
 			//echo "  ".$id."  ".$name."  ".$level1."  ".$level2."  ".$level3."  ".$URL."  ".$introduction."<br>";
 			$str = json_encode($data);
 			echo urldecode($str);
+			
 		}
 
 		$db->close();
