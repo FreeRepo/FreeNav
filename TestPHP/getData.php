@@ -1,13 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Basic PHP Page</title>
-</head>
-<body>
 
-	<p>
 		<?php
+		error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 		include("data.php");
 		include("connector.php");
 	
@@ -18,7 +11,42 @@
 		$mysql_database='FreexueNav';
 
 		$var = $_GET["level2"];
+		$var = iconv("GBK", "UTF-8", $var); 
+ 		
+		//=================================
+		if(strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 9.0"))
+		{$browser = "Internet Explorer 9.0";   }
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 8.0"))
+		{$browser = "Internet Explorer 8.0";   }
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 7.0"))      
+		{$browser = "Internet Explorer 7.0";  }    
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"MSIE 6.0"))      
+		{$browser = "Internet Explorer 6.0";}
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Firefox/5"))      
+		{$browser = "Firefox 5";  
+		$var = $_GET["level2"];}
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Firefox/4"))      
+		{$browser = "Firefox 4";  
+		$var = $_GET["level2"];}
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Firefox/3"))      
+		{$browser = "Firefox 3";   
+		$var = $_GET["level2"];
+		 }  
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Firefox/2"))      
+		$browser = "Firefox 2";
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Chrome"))
+		{$browser = "Google Chrome";
+		$var = $_GET["level2"];
+		 }     
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Safari"))      
+		{$browser = "Safari";}      
+	else if(strpos($_SERVER["HTTP_USER_AGENT"],"Opera"))      
+		{$browser = "Opera";  }    
+	else 	
+	{$browser =  $_SERVER["HTTP_USER_AGENT"]; }
 
+
+		//==================================
 		$db = new foo_mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 		//echo 'Success... ' . $db->host_info . "\n";
 
@@ -55,7 +83,3 @@
 		
 		$db->close();
 		?>
-
-	</p>
-</body>
-</html>
