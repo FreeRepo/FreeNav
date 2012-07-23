@@ -22,7 +22,7 @@
 		$db = new foo_mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 		//echo 'Success... ' . $db->host_info . "\n";
 
-		$result = $db->query("SELECT * FROM Data WHERE level2 = '".$var."'");
+		$result = $db->query("SELECT * FROM Data ORDER BY Click DESC LIMIT 12");
 		
 		$output =  array();
 		$key = 0;
