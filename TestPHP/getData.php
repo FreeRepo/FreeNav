@@ -9,6 +9,8 @@
 		$mysql_database='FreexueNav';
 
 		$var = $_GET["level2"];
+		
+		$change;
 
 		$db = new foo_mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 		//echo 'Success... ' . $db->host_info . "\n";

@@ -20,7 +20,6 @@
 
 		$id = $_GET["id"];
 		
-		$change = 1;
 		
 		$db = new foo_mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
 		//echo 'Success... ' . $db->host_info . "\n";
