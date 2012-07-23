@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{
+	list-style-type:none;
+	margin: 0px auto;
+	padding: 0px auto;
+	text-decoration: none;
+
+}
+img{border:0;}
+ul {margin:0px; padding:0px;}
+
+body{
+		background-image: url(img/freexue-bg.png);
+	background-repeat: repeat;
+	}
+#main{
+	width:960px;
+	height:auto !important;
+	height:800px; /*假定最低高度是200px*/
+	min-height:800px; 
+	 clear:both; 
+	 overflow:auto;
+	}
+#top{
+	width:100%;
+	height:86px;
+	background-color:#95c13d;
+	background-image: url(img/freexue-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	}
+#info{
+	text-align:center;
+	width:100%;
+	font-family: "微软雅黑";
+	margin-right:120px;
+	font-size:32px;
+	line-height:86px;
+	color:#FFF;
+}
+#center{
+	margin-top:22px;
+	width:100%;
+	}
+#left{
+	font-size:14px;
+
+	width:105px;
+	float:left;
+	text-align:right;
+	}
+#left li{
+	line-height:22px;
+	font-family: "微软雅黑";
+	}
+.choice{
+	color:#777777;
+	font-size:15px;
+	cursor:pointer;
+	filter:alpha(opacity=60);
+ 			-moz-opacity:0.6;
+ 			-khtml-opacity:0.6; 		
+				opacity:0.6;	
+	}
+
+.subchoice li{
+	font-size:14px;
+	color:#777777;
+	border-right-width: 2px;
+	border-right-style: solid;
+	border-right-color: #95c13d;
+	margin-right:4px;
+	}
+.subchoice li a{
+	font-size:14px;
+	color:#777777;
+	}
+#selected{
+	color:#95c13d;
+	}
+	
+#right{
+	float:left;
+	margin-left:6px;
+	width:849px;
+	}
+.content{
+	margin-left:9px;
+	width:270px;
+	height:300px;
+	float:left;
+	margin-bottom:20px;
+	border: 1px solid #bbbbbb;
+	background-color:#FFF;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+	}
+.title{
+	margin-top:8px;
+	margin-left:10px;
+	margin-bottom:8px;
+	font-size:14px;
+	color:#666666;
+	}
+.image{
+	position:relative;
+	width:250px;
+	height:170px;
+	margin-bottom:10px;
+
+	}
+.discription{
+	position:relative;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:6px;
+	width:260px;
+	top:10px;
+	font-size:13px;
+	line-height:22px;
+	background-color:#e5e5e5;
+	height:295px;
+	color:#666666;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #bbbbbb;
+	
+
+
+	}
+#bottom{
+	text-align:center;
+	font-size:12px;
+	line-height:24px;
+	}
