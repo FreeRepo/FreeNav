@@ -7,11 +7,13 @@
 <body>
 
 	<p>
-		<?php
+		<?php  
 		include("data.php");
+		
 		include("connector.php");
 	
 
+		
 		$mysql_server_name='223.4.134.183:3306';
 		$mysql_username='root';
 		$mysql_password='eagle';
